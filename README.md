@@ -8,33 +8,43 @@ This can be used for quick-reference by anyone who needs an overview of the scop
 
 * Tested on [Red&nbsp;Hat](https://www.redhat.com/en/store/linux-platforms) and [Fedora](https://getfedora.org) GNU+Linux only. It may work on some other POSIX.
 * GNU Awk
-* pdftk
+* [OpenJDK](https://adoptopenjdk.net/) or some Java runtime
+* [pdftk-java](https://gitlab.com/pdftk-java/pdftk)
 * ImageMagick
 
+### Install Java
 
-### Installing pdftk
+Download and install Java from [AdoptOpenJDK](https://adoptopenjdk.net) or grab the latest Java install from your distribution's software repository.
 
-If your distribution doesn't provide pdftk, the easiest way to get it may be to install [Snap](https://snapcraft.io).
+### Install pdftk-java
 
-Once Snap is installed and the ``snapd`` daemon is started, install [pdftk](https://snapcraft.io/pdftk).
+If your distribution doesn't provide ``pdftk``, then the easiest way to get it is [pdftk-java](https://gitlab.com/pdftk-java/pdftk)
 
-Try it out:
+First, download the [native image](https://gitlab.com/pdftk-java/pdftk/-/releases). Don't download the source code unless you really want to build a Java project from source.
 
+Next, place the file in some location on your path.
+It's common to keep a folder of binaries in your home directory (such as ``$HOME/bin``) but you can place it anywhere (``/opt`` or ``/usr/local/bin`` are good candidates) as long as it's in your [PATH](https://opensource.com/article/17/6/set-path-linux).
+
+Once installed, try it out:
+
+    $ chmod +x /path/to/pdftk
     $ pdftk --version
-	
-If ``pdftk`` cannot be found, then you probably need to do this:
+	pdftk port to java X.Y.Z for Manipulating PDF Documents
 
-    $ sudo ln -s /var/lib/snapd/snap /snap
+## Install ImageMagick
 
-Then add ``/snap`` to your PATH.
+Install ImageMagick from your distribution's software repository.
 
+## Install Awk
+
+You probably already have Awk, but make sure you have GNU Awk (``Gawk``) specifically.
+If not, it's probably available from your repository or ports tree.
 
 ## Install
 
 Clone this repository (or just download a ZIP snapshot of its current state).
 
-Then place the project directory in ~/bin or some other location in your PATH.
-
+Place the project directory in ``~/bin`` or some other location in your PATH. 
 
 ## Usage 
 
